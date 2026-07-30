@@ -17,6 +17,21 @@ flowchart LR
     d --> e[조회·수정·삭제 실행]
 ```
 
+### 이용 흐름
+
+```mermaid
+sequenceDiagram
+    participant U as 사용자
+    participant A as DB Linker AI
+    participant O as OpenAI
+    participant D as Supabase / Pinecone
+    U->>A: 자연어 요청 입력
+    A->>O: 요청 해석
+    O->>A: 처리 결과
+    A->>D: 조회·수정·삭제 실행
+    A->>U: 결과 응답
+```
+
 ## 이런 분께 추천합니다
 
 - SQL을 매번 직접 쓰지 않고 자연어로 DB 작업을 하고 싶은 개발자
